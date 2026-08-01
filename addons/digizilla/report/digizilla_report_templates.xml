@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_digizilla_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Digizilla Report</h2>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Name</th>
+                                <td><span t-field="doc.name"/></td>
+                            </tr>
+                            <tr>
+                                <th>Gender</th>
+                                <td><span t-field="doc.gender"/></td>
+                            </tr>
+                            <tr>
+                                <th>Country</th>
+                                <td><span t-field="doc.country_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <th>Birth Date</th>
+                                <td><span t-field="doc.birth_date"/></td>
+                            </tr>
+                            <tr>
+                                <th>Age</th>
+                                <td><span t-field="doc.age"/></td>
+                            </tr>
+                            <tr>
+                                <th>Tags</th>
+                                <td>
+                                    <span t-foreach="doc.tag_ids" t-as="tag">
+                                        <span t-field="tag.name"/><span t-if="not tag_last">, </span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Customer</th>
+                                <td><span t-field="doc.customer_ids.name"/></td>
+                            </tr>
+                            <tr>
+                                <th>No. of Sales Orders</th>
+                                <td><span t-field="doc.sale_order_count"/></td>
+                            </tr>
+                            <tr>
+                                <th>Notes</th>
+                                <td><span t-field="doc.notes"/></td>
+                            </tr>
+                            <tr>
+                                <th>Comments</th>
+                                <td><span t-field="doc.comments"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

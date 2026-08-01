@@ -8,6 +8,15 @@
         <field name="arch" type="xml">
             <form string="Digizilla">
                 <sheet>
+                
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_report_digizilla)d"
+                                type="action"
+                                string="Print Report"
+                                class="oe_stat_button"
+                                icon="fa-file-pdf-o"/>
+                    </div>
+
                     <group>
                         <group>
                             <field name="name"/>
