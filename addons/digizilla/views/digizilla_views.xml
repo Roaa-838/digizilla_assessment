@@ -104,6 +104,6 @@
         <field name="name">Digizilla</field>
         <field name="res_model">digizilla.digizilla</field>
         <field name="view_mode">list,form,kanban,pivot</field>
+        <field name="context">{'create': False}</field>
     </record>
-
 </odoo>
