@@ -9,10 +9,7 @@ class DigizillaTag(models.Model):
     name = fields.Char(string='Name', required=True)
     color = fields.Integer(string='Color')
 
-    _sql_constraints = [
-        ('name_uniq', 'unique(name)', 'Tag name must be unique.'),
-    ]
-
+    _name_uniq = models.Constraint('unique(name)', 'Tag name must be unique.')
 
 class Digizilla(models.Model):
     _name = 'digizilla.digizilla'

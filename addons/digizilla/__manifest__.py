@@ -8,10 +8,10 @@
     'data': [
         'security/digizilla_groups.xml',
         'security/ir.model.access.csv',
-        'views/digizilla_views.xml',
-        'views/digizilla_menu.xml',
         'report/digizilla_report_templates.xml',
         'report/digizilla_report.xml',
+        'views/digizilla_views.xml',
+        'views/digizilla_menu.xml',
     ],
     'assets': {
         'web.assets_backend': [
