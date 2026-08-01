@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_digizilla_root"
+              name="Digizilla"
+              action="action_digizilla"
+              groups="digizilla.group_digizillians"/>
+</odoo>

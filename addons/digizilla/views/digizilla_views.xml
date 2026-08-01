@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_digizilla_form" model="ir.ui.view">
+        <field name="name">digizilla.digizilla.form</field>
+        <field name="model">digizilla.digizilla</field>
+        <field name="arch" type="xml">
+            <form string="Digizilla">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="country_id"/>
+                            <field name="birth_date"/>
+                        </group>
+                        <group>
+                            <field name="age" readonly="1"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
+                            <field name="customer_ids"/>
+                            <field name="sale_order_count" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                        <page string="Comments">
+                            <field name="comments"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_digizilla_kanban" model="ir.ui.view">
+        <field name="name">digizilla.digizilla.kanban</field>
+        <field name="model">digizilla.digizilla</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="tag_ids"/>
+                <field name="customer_ids"/>
+                <field name="sale_order_count"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_card">
+                            <strong><field name="name"/></strong>
+                            <div>Age: <field name="age"/></div>
+                            <div>Customer: <field name="customer_ids"/></div>
+                            <div>Sales Orders: <field name="sale_order_count"/></div>
+                            <div><field name="tag_ids" widget="many2many_tags"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- List (Tree) View -->
+    <record id="view_digizilla_list" model="ir.ui.view">
+        <field name="name">digizilla.digizilla.list</field>
+        <field name="model">digizilla.digizilla</field>
+        <field name="arch" type="xml">
+            <list string="Digizillas">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="tag_ids" widget="many2many_tags"/>
+                <field name="birth_date"/>
+                <field name="country_id" optional="hide"/>
+                <field name="gender" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_digizilla_pivot" model="ir.ui.view">
+        <field name="name">digizilla.digizilla.pivot</field>
+        <field name="model">digizilla.digizilla</field>
+        <field name="arch" type="xml">
+            <pivot string="Digizillas Analysis">
+                <field name="gender" type="row"/>
+                <field name="age" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_digizilla" model="ir.actions.act_window">
+        <field name="name">Digizilla</field>
+        <field name="res_model">digizilla.digizilla</field>
+        <field name="view_mode">list,form,kanban,pivot</field>
+    </record>
+
+</odoo>
