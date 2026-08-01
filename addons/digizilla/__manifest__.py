@@ -3,8 +3,8 @@
     'version': '19.0.1.0.0',
     'summary': 'Digizilla assessment module',
     'category': 'Custom',
-    'depends': ['base', 'mail', 'sale'],
     'author': 'Roaa',
+    'depends': ['base', 'mail', 'sale'],
     'data': [
         'security/digizilla_groups.xml',
         'security/ir.model.access.csv',
