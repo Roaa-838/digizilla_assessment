@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_digizilla" model="ir.module.category">
+        <field name="name">Digizilla</field>
+        <field name="description">Access rights for the Digizilla module</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="group_digizillians" model="res.groups">
+        <field name="name">Digizillians</field>
+        <field name="category_id" ref="module_category_digizilla"/>
+        <field name="comment">Users who can access the Digizilla app.</field>
+    </record>
+</odoo>
